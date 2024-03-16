@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Список игр</title>
+{% endblock %}
+
+{% block body %}
+<table border="1">
+    <tr><th class="bg-body-tertiary border rounded-3">Игра</th><th class="bg-body-tertiary border rounded-3">Кол-во уровней</th><th class="bg-body-tertiary border rounded-3">Редактировать игру</th><th class="bg-body-tertiary border rounded-3">Удалить игру</th></tr>
+    {% for i in data %} 
+        <tr><th class="bg-body-tertiary border rounded-3">{{i.name}}</th><th class="bg-body-tertiary border rounded-3">{{i.levels}}</th><th class="bg-body-tertiary border rounded-3"><a href = "/EditGame/{{ i.id }}"><button class="btn btn-outline-secondary">Редактировать</button></a></th><th class="bg-body-tertiary border rounded-3"> <a href = "/DeleteGame/{{ i.id }}"><button class="btn btn-outline-secondary">Удалить</button> </a></th></tr>
+    {%endfor%}
+</table>
+<br>
+<a href="/CreateGame"><button class="btn btn-primary">+</button></a>
+{% endblock %}

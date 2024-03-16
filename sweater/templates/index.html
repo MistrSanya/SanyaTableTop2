@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Главная страница</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="list">
+    <table>
+        <tr><th class="text">Список пользователей</th><th><a href="/Users"><button  class="btn btn-primary">Перейти</button></a></th></tr>
+        <tr><th class="text">Список Игр</th><th><a href="/Games"><button  class="btn btn-primary">Перейти</button> </a></th></tr>
+        <tr><th class="text">Список Достижений(Пока что недоступен)</th><th><a href="/Achievements"><button  class="btn btn-primary">Перейти</button> </a></th></tr>
+    </table>
+</div>
+{% endblock %}

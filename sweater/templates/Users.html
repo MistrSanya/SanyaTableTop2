@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Список слов</title>
+{% endblock %}
+
+{% block body %}
+
+<table border="1">
+    <tr><th class="bg-body-tertiary border rounded-3">Логин</th><th class="bg-body-tertiary border rounded-3">Имя</th><th class="bg-body-tertiary border rounded-3">Фамилия</th><th class="bg-body-tertiary border rounded-3">Отчество</th><th class="bg-body-tertiary border rounded-3">Соц. сеть</th><th class="bg-body-tertiary border rounded-3">Номер телефона</th><th class="bg-body-tertiary border rounded-3">Email</th><th class="bg-body-tertiary border rounded-3">Редактировать пользователя</th><th class="bg-body-tertiary border rounded-3">Удалить пользователя</th></tr>
+    {% for i in data %} 
+        <tr><th class="bg-body-tertiary border rounded-3">{{i.login}}</th><th class="bg-body-tertiary border rounded-3">{{i.first_name}}</th><th class="bg-body-tertiary border rounded-3">{{i.last_name}}</th><th class="bg-body-tertiary border rounded-3">{{i.dads_name}}</th><th class="bg-body-tertiary border rounded-3">{{i.messenger}}</th><th class="bg-body-tertiary border rounded-3">{{i.phone}}</th><th class="bg-body-tertiary border rounded-3">{{i.email}}</th><th class="bg-body-tertiary border rounded-3"><a href = "/EditUser/{{ i.id }}"><button class="btn btn-outline-secondary">Редактировать</button></a></th><th class="bg-body-tertiary border rounded-3"> <a href = "/DeleteUser/{{ i.id }}"><button class="btn btn-outline-secondary">Удалить</button> </a></th></tr>
+    {%endfor%}
+</table>
+<br>
+<a href="/register"><button class="btn btn-primary">+</button></a>
+{% endblock %}
